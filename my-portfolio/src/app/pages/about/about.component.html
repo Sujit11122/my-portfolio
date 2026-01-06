@@ -1,0 +1,94 @@
+<div class="about-page">
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="about-hero-content">
+      <div class="about-image">
+        <img src="assets/images/profile.jpg" alt="{{ name }}">
+      </div>
+      <div class="about-intro">
+        <h1>About Me</h1>
+        <h2>{{ name }}</h2>
+        <p class="role">{{ role }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="about-content">
+    <div class="container">
+      <div class="about-text">
+        <h2>Hello!</h2>
+        <p>{{ about.intro }}</p>
+        <p>{{ about.description }}</p>
+        <p>{{ about.passion }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education-section">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="education-grid">
+        <div class="education-item" *ngFor="let edu of education">
+          <h3>{{ edu.degree }}</h3>
+          <h4>{{ edu.school }}</h4>
+          <p class="year">{{ edu.year }}</p>
+          <p>{{ edu.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <div class="container">
+      <h2>Skills & Technologies</h2>
+      <div class="skills-container">
+        <div class="skill-category" *ngFor="let skill of skills">
+          <h3>{{ skill.category }}</h3>
+          <ul>
+            <li *ngFor="let item of skill.items">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card" *ngFor="let project of projects">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <div class="tech-tags">
+            <span *ngFor="let tech of project.tech">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interests Section -->
+  <section class="interests-section">
+    <div class="container">
+      <h2>Areas of Interest</h2>
+      <div class="interests-grid">
+        <div class="interest-item" *ngFor="let interest of interests">
+          <span>{{ interest }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="about-cta">
+    <div class="container">
+      <h2>Let's Connect</h2>
+      <p>I'm actively seeking internship opportunities and always excited to collaborate on interesting projects.</p>
+      <button class="cta-button">Get In Touch</button>
+    </div>
+  </section>
+</div>

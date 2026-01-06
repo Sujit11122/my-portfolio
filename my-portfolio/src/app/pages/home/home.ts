@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class Home {
 
+  title = 'Sujit Gautam';
+  role = 'Computer Science Student | Full Stack Developer';
+  tagline = 'Computer Science student passionate about building scalable, user-focused web applications using modern frontend and backend technologies';
 }
