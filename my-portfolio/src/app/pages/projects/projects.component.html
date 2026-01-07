@@ -1,0 +1,92 @@
+<div class="projects-page">
+
+  <!-- Hero -->
+  <section class="projects-hero">
+    <div class="container">
+      <h1>My Projects</h1>
+      <p>Here are some of the projects I’ve worked on.</p>
+
+      <p style="margin-top: 8px;">Projects loaded: {{ projects.length }}</p>
+    </div>
+  </section>
+
+  <!-- Projects List -->
+  <section class="projects-list">
+    <div class="container">
+
+      <div class="project-card" *ngFor="let project of projects">
+
+        <!-- Images -->
+        <div class="project-images" *ngIf="project.images?.length">
+          <img
+            *ngFor="let image of project.images"
+            [src]="image"
+            [alt]="project.title"
+          />
+        </div>
+
+        <!-- Info -->
+        <div class="project-content">
+          <h2>{{ project.title }}</h2>
+          <p class="description">{{ project.longDescription }}</p>
+
+          <!-- Tech Stack -->
+          <div class="tech-tags" *ngIf="project.tech?.length">
+            <span *ngFor="let tech of project.tech">{{ tech }}</span>
+          </div>
+
+          <!-- Features -->
+          <div class="features" *ngIf="project.features?.length">
+            <h3>Key Features</h3>
+            <ul>
+              <li *ngFor="let feature of project.features">
+                {{ feature }}
+              </li>
+            </ul>
+          </div>
+
+          <!-- Challenges -->
+          <div *ngIf="project.challenges">
+            <h3>Challenges</h3>
+            <p>{{ project.challenges }}</p>
+          </div>
+
+          <!-- Learnings -->
+          <div *ngIf="project.learnings">
+            <h3>What I Learned</h3>
+            <p>{{ project.learnings }}</p>
+          </div>
+
+          <!-- Links -->
+          <div class="project-links">
+            <a
+              *ngIf="project.githubLink"
+              [href]="project.githubLink"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
+            <a
+              *ngIf="project.liveLink"
+              [href]="project.liveLink"
+              target="_blank"
+              rel="noopener"
+            >
+              Live Demo
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state" *ngIf="projects.length === 0">
+        <h3>No projects found</h3>
+        <p>Project list is empty. Check ProjectService data and module imports.</p>
+      </div>
+
+    </div>
+  </section>
+
+</div>

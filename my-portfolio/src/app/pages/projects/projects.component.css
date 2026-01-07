@@ -1,0 +1,227 @@
+/* projects.component.css */
+
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.projects-page {
+  width: 100%;
+}
+
+/* Container (same as About) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero (same gradient theme) */
+.projects-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+.projects-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.projects-hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 850px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Projects List Section */
+.projects-list {
+  padding: 4rem 2rem;
+  background: #f7fafc; /* same section bg */
+}
+
+/* Card (similar to education/project cards in About) */
+.project-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  border-color: #667eea;
+}
+
+/* Project content */
+.project-content h2 {
+  font-size: 1.7rem;
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 1.25rem;
+}
+
+/* Images grid */
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-images img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease;
+}
+
+.project-images img:hover {
+  transform: scale(1.02);
+}
+
+/* Tech tags (reuse About style) */
+.tech-tags {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.5rem;
+}
+
+.tech-tags span {
+  background: #edf2f7;
+  color: #667eea;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+}
+
+/* Features / sections */
+.features h3,
+.project-content h3 {
+  font-size: 1.2rem;
+  color: #2d3748;
+  margin: 1.25rem 0 0.75rem;
+  font-weight: 600;
+}
+
+.features ul {
+  padding-left: 1.2rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+.features li {
+  margin: 0.4rem 0;
+}
+
+/* Links styled like About CTA button but smaller */
+.project-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  padding: 0.75rem 1.3rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: white;
+  color: #667eea;
+  border: 1px solid #667eea;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.2);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 2rem auto 0;
+  color: #4a5568;
+}
+
+.empty-state h3 {
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .projects-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .projects-hero p {
+    font-size: 1rem;
+  }
+
+  .projects-list {
+    padding: 3rem 1.5rem;
+  }
+
+  .project-card {
+    padding: 1.75rem;
+  }
+
+  .project-images img {
+    height: 170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .project-card {
+    padding: 1.4rem;
+  }
+
+  .project-images {
+    grid-template-columns: 1fr;
+  }
+
+  .project-images img {
+    height: 160px;
+  }
+}
