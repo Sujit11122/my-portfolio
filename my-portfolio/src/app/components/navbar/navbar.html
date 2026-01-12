@@ -1,12 +1,13 @@
 <nav class="navbar">
   <div class="nav-container">
-    <a routerLink="/home" class="logo">Portfolio</a>
+    <a class="logo" (click)="scrollTo('home')">Portfolio</a>
+
     <ul class="nav-menu">
-      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
-      <li><a routerLink="/skills" routerLinkActive="active">Skills</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      <li><a (click)="scrollTo('home')" [class.active]="activeSection==='home'">Home</a></li>
+      <li><a (click)="scrollTo('about')" [class.active]="activeSection==='about'">About</a></li>
+      <li><a (click)="scrollTo('projects')" [class.active]="activeSection==='projects'">Projects</a></li>
+      <li><a (click)="scrollTo('skills')" [class.active]="activeSection==='skills'">Skills</a></li>
+      <li><a (click)="scrollTo('contact')" [class.active]="activeSection==='contact'">Contact</a></li>
     </ul>
   </div>
 </nav>

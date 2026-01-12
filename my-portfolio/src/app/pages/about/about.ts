@@ -31,71 +31,16 @@ export class Aboutcomponent {
     }
   ];
 
-  skills = [
-    {
-      category: 'Programming Languages',
-      items: [
-        'Java',
-        'Python',
-        'C',
-        'C++',
-        'C#',
-        'JavaScript',
-        'Kotlin',
-        'SQL',
-        'Visual Basic'
-      ]
-    },
-    {
-      category: 'Frameworks & Libraries',
-      items: [
-        'React.js',
-        'Angular',
-        'Node.js',
-        'Next.js',
-        '.NET'
-      ]
-    },
-    {
-      category: 'Databases',
-      items: [
-        'SQL',
-        'Microsoft Access'
-      ]
-    },
-    {
-      category: 'Developer Tools',
-      items: [
-        'Git',
-        'GitHub',
-        'Visual Studio',
-        'Android Studio'
-      ]
-    }
-  ];
-
-  projects = [
-    {
-      title: 'TaskFlow – Task & Time Management System',
-      description:
-        'Developed a full-stack task and time management system as part of a software engineering team project to help users organize tasks, track progress, and manage priorities efficiently.',
-      tech: ['React', 'TypeScript', 'C#', '.NET']
-    },
-    {
-      title: 'PaoBucks – Coffee Ordering Mobile App',
-      description:
-        'Built an Android coffee ordering application that allows users to browse menus, customize orders, and place purchases through an intuitive mobile interface.',
-      tech: ['Kotlin', 'Firebase', 'Material Design', 'XML']
-    }
-  ];
-
-  interests = [
-    'Full-Stack Web Development',
-    'Mobile App Development',
-    'Software Engineering',
-    'Problem Solving',
-    'Learning New Technologies',
-    'Open Source Contribution',
-    'Collaborative Projects',
-  ];
+ interests = [
+  'Full-Stack Web Development',
+  'Frontend Engineering & UI Design',
+  'Backend Development & APIs',
+  'Mobile Application Development',
+  'Software Engineering Best Practices',
+  'Data Structures & Problem Solving',
+  'Learning Emerging Technologies',
+  'Open Source Collaboration',
+  'Building Scalable Applications',
+  'Team-Based & Agile Development',
+];
 }

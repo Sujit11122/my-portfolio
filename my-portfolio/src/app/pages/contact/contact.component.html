@@ -1,0 +1,36 @@
+<section class="contact-section">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="subtitle">
+      Feel free to reach out for internships, collaborations, or questions.
+    </p>
+
+    <div class="contact-card">
+      <form (ngSubmit)="sendEmail()">
+        <label>
+          Name
+          <input type="text" [(ngModel)]="form.name" name="name" required />
+        </label>
+
+        <label>
+          Email
+          <input type="email" [(ngModel)]="form.email" name="email" required />
+        </label>
+
+        <label>
+          Message
+          <textarea
+            rows="5"
+            [(ngModel)]="form.message"
+            name="message"
+            required
+          ></textarea>
+        </label>
+
+        <button class="send-btn" type="submit">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

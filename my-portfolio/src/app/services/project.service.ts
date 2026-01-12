@@ -8,7 +8,6 @@ export interface Project {
   tech: string[];
   images: string[];
   githubLink?: string;
-  liveLink?: string;
   features: string[];
   challenges?: string;
   learnings?: string;
@@ -30,9 +29,10 @@ export class ProjectService {
         'PaoBucks is a feature-rich Android coffee ordering application built using Kotlin and Firebase. The app enables users to browse coffee items, customize orders, and place orders seamlessly. Material Design principles were applied to create a responsive and engaging user interface. Agile development practices and GitHub version control were used to collaborate effectively and deliver incremental updates.',
       tech: ['Kotlin', 'Firebase', 'Android Studio', 'XML', 'Git', 'GitHub'],
       images: [
-        'assets/images/projects/paobucks-1.jpg',
-        'assets/images/projects/paobucks-2.jpg'
+        'assets/projects/paobucks-1.png',
+        'assets/projects/paobucks-2.png'
       ],
+      githubLink: 'https://github.com/Sujit11122/paobucks',
       features: [
         'Coffee browsing and customization',
         'User-friendly and responsive UI',
@@ -57,6 +57,7 @@ export class ProjectService {
         'assets/projects/taskflow-1.png',
         'assets/projects/taskflow-2.png'
       ],
+      githubLink: 'https://github.com/Sujit11122/TaskFlow-Cmps285',
       features: [
         'Task creation and management',
         'Time tracking functionality',

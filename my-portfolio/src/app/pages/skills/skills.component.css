@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.skills-section {
+  padding: 4rem 1.5rem;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-section h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 3rem;
+}
+
+/* GRID FIX — this is what was missing */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+/* CARD */
+.skill-card {
+  background: #ffffff;
+  border: 1px solid #e6edf6;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+/* CARD TITLE */
+.skill-card h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #6c7cff;
+  margin-bottom: 1.5rem;
+}
+
+/* LIST */
+.skill-card ul {
+  list-style: none;
+  display: grid;
+  gap: 1.1rem;
+}
+
+/* LIST ITEM */
+.skill-card li {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 1.05rem;
+  color: #334155;
+}
+
+/* CHECK ICON */
+.skill-card li::before {
+  content: "✓";
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(108, 124, 255, 0.15);
+  color: #6c7cff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}

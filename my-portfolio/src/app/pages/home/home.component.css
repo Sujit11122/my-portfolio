@@ -1,8 +1,5 @@
-/* home.component.css */
-
-/* Hero Section */
 .hero {
-  min-height: calc(100vh - 120px); /* Adjust based on your navbar/footer height */
+  min-height: calc(100vh - 120px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,7 +62,6 @@
   text-align: left;
 }
 
-/* CTA Buttons */
 .cta-buttons {
   display: flex;
   gap: 1rem;
@@ -106,7 +102,6 @@
   transform: translateY(-3px);
 }
 
-/* About Preview Section */
 .about-preview {
   padding: 5rem 2rem;
   background: #f8f9fa;
@@ -127,7 +122,6 @@
   color: #555;
 }
 
-/* Skills Section */
 .skills {
   padding: 5rem 2rem;
   background: white;
@@ -167,7 +161,6 @@
   margin: 0;
 }
 
-/* Featured Projects Section */
 .featured-projects {
   padding: 5rem 2rem;
   background: #f8f9fa;
@@ -227,7 +220,6 @@
   font-size: 0.85rem;
 }
 
-/* Contact CTA Section */
 .contact-cta {
   padding: 5rem 2rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -263,7 +255,6 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -275,37 +266,40 @@
   }
 }
 
-/* Responsive Design */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
 @media (max-width: 968px) {
   .hero-content {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
   }
-  
+
   .hero-text {
     text-align: center;
   }
-  
+
   .hero h1 {
     font-size: 2.5rem;
     text-align: center;
   }
-  
+
   .hero h2 {
     font-size: 1.5rem;
     text-align: center;
   }
-  
+
   .hero p {
     font-size: 1rem;
     text-align: center;
   }
-  
+
   .cta-buttons {
     justify-content: center;
   }
-  
+
   .hero-image img {
     width: 250px;
     height: 250px;
@@ -316,19 +310,19 @@
   .cta-buttons {
     flex-direction: column;
   }
-  
+
   .cta-buttons button {
     width: 100%;
   }
-  
+
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .hero-image img {
     width: 200px;
     height: 200px;
@@ -339,11 +333,11 @@
   .hero h1 {
     font-size: 2rem;
   }
-  
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .hero-image img {
     width: 180px;
     height: 180px;

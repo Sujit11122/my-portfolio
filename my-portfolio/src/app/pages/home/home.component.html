@@ -1,0 +1,42 @@
+<!-- home.component.html -->
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="hero-image">
+      <img src="/assets/images/profile.jpg" alt="Profile image" />
+    </div>
+
+    <div class="hero-text">
+      <h1>{{ title }}</h1>
+      <h2>{{ role }}</h2>
+      <p>{{ tagline }}</p>
+
+      <div class="cta-buttons">
+        <button class="primary-btn" (click)="scrollTo('projects')">
+          View My Work
+        </button>
+
+        <button class="secondary-btn" (click)="scrollTo('contact')">
+          Contact Me
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Later on this same page, add these sections (example) -->
+<section id="about">
+  <app-about></app-about>
+</section>
+
+<section id="projects">
+  <app-projects></app-projects>
+</section>
+
+<section id="skills">
+  <app-skills></app-skills>
+</section>
+
+<section id="contact">
+  <app-contact></app-contact>
+</section>
