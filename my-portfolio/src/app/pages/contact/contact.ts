@@ -16,17 +16,42 @@ export class Contact {
     message: '',
   };
 
-  sendEmail() {
-    const subject = `Portfolio Contact from ${this.form.name}`;
-    const body = `
-Name: ${this.form.name}
-Email: ${this.form.email}
+  successMessage = '';
+  errorMessage = '';
+   isSending = false;
 
-Message:
-${this.form.message}
-    `;
+  async sendForm(event: Event) {
+    event.preventDefault();
 
-    window.location.href =
-      `mailto:gautamsujit341@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    this.successMessage = '';
+    this.errorMessage = '';
+
+    try {
+      const response = await fetch('https://formspree.io/f/mnjdyjar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: this.form.name,
+          email: this.form.email,
+          message: this.form.message,
+          _replyto: this.form.email,
+          subject: `Portfolio Contact from ${this.form.name}`,
+        }),
+      });
+
+      if (response.ok) {
+        this.successMessage = 'Message sent successfully!';
+        this.form = { name: '', email: '', message: '' };
+      } else {
+        this.errorMessage = 'Failed to send message. Please try again.';
+      }
+    } catch {
+      this.errorMessage = 'Network error. Please try again later.';
+    } finally {
+      this.isSending = false;
+    }
   }
 }

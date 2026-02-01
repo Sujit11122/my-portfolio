@@ -6,29 +6,50 @@
     </p>
 
     <div class="contact-card">
-      <form (ngSubmit)="sendEmail()">
+
+      <!-- SUCCESS ALERT -->
+      <div *ngIf="successMessage" class="alert success-alert">
+        {{ successMessage }}
+      </div>
+
+      <!-- ERROR ALERT -->
+      <div *ngIf="errorMessage" class="alert error-alert">
+        {{ errorMessage }}
+      </div>
+
+      <form (submit)="sendForm($event)">
         <label>
           Name
-          <input type="text" [(ngModel)]="form.name" name="name" required />
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="form.name"
+            required
+          />
         </label>
 
         <label>
           Email
-          <input type="email" [(ngModel)]="form.email" name="email" required />
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="form.email"
+            required
+          />
         </label>
 
         <label>
           Message
           <textarea
             rows="5"
-            [(ngModel)]="form.message"
             name="message"
+            [(ngModel)]="form.message"
             required
           ></textarea>
         </label>
 
-        <button class="send-btn" type="submit">
-          Send Message
+        <button class="send-btn" type="submit" [disabled]="isSending">
+          {{ isSending ? 'Sending...' : 'Send Message' }}
         </button>
       </form>
     </div>
