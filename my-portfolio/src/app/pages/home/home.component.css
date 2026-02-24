@@ -1,3 +1,6 @@
+/* ==============================
+   HERO SECTION
+============================== */
 .hero {
   min-height: calc(100vh - 120px);
   display: flex;
@@ -43,7 +46,6 @@
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
-  text-align: left;
 }
 
 .hero h2 {
@@ -51,7 +53,6 @@
   font-weight: 400;
   margin-bottom: 1.5rem;
   opacity: 0.95;
-  text-align: left;
 }
 
 .hero p {
@@ -59,9 +60,11 @@
   margin-bottom: 2.5rem;
   opacity: 0.9;
   line-height: 1.6;
-  text-align: left;
 }
 
+/* ==============================
+   CTA BUTTONS
+============================== */
 .cta-buttons {
   display: flex;
   gap: 1rem;
@@ -69,7 +72,8 @@
   flex-wrap: wrap;
 }
 
-.cta-buttons button {
+.cta-buttons button,
+.resume-btn {
   padding: 0.9rem 2rem;
   font-size: 1rem;
   font-weight: 600;
@@ -78,6 +82,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
+  text-decoration: none; /* for resume link */
+  display: inline-block;
+  text-align: center;
 }
 
 .primary-btn {
@@ -102,6 +109,26 @@
   transform: translateY(-3px);
 }
 
+/* ==============================
+   RESUME BUTTON
+============================== */
+.resume-btn {
+  background: #667eea;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.25);
+}
+
+.resume-btn:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.35);
+}
+
+/* ==============================
+   SECTIONS
+============================== */
 .about-preview {
   padding: 5rem 2rem;
   background: #f8f9fa;
@@ -255,6 +282,9 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* ==============================
+   ANIMATIONS & SCROLL
+============================== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -270,6 +300,9 @@ section[id] {
   scroll-margin-top: 90px;
 }
 
+/* ==============================
+   RESPONSIVE
+============================== */
 @media (max-width: 968px) {
   .hero-content {
     flex-direction: column;
@@ -283,17 +316,14 @@ section[id] {
 
   .hero h1 {
     font-size: 2.5rem;
-    text-align: center;
   }
 
   .hero h2 {
     font-size: 1.5rem;
-    text-align: center;
   }
 
   .hero p {
     font-size: 1rem;
-    text-align: center;
   }
 
   .cta-buttons {
@@ -311,7 +341,8 @@ section[id] {
     flex-direction: column;
   }
 
-  .cta-buttons button {
+  .cta-buttons button,
+  .resume-btn {
     width: 100%;
   }
 
@@ -341,5 +372,10 @@ section[id] {
   .hero-image img {
     width: 180px;
     height: 180px;
+  }
+
+  .resume-btn {
+    font-size: 0.9rem;
+    padding: 0.65rem 1.4rem;
   }
 }

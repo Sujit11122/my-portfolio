@@ -52,7 +52,7 @@ export class ProjectService {
         'Built a task and time management system as part of a software engineering team project.',
       longDescription:
         'TaskFlow is a task and time management system developed using C#, .NET, React, and TypeScript. The application focuses on improving productivity by enabling task tracking, prioritization, and workflow organization. The project emphasized teamwork, planning, and efficient resource management following software engineering principles.',
-      tech: ['C#', '.NET', 'React', 'TypeScript', 'Git', 'GitHub'],
+      tech: ['C#', '.NET', 'React', 'TypeScript', 'Git', 'GitHub' , 'Agile Methodology'],
       images: [
         'assets/projects/taskflow-1.png',
         'assets/projects/taskflow-2.png'
