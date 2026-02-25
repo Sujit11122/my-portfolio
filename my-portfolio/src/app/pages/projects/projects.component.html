@@ -15,7 +15,7 @@
       <div class="project-card" *ngFor="let project of projects">
 
         <!-- Images -->
-        <div class="project-images" *ngIf="project.images?.length">
+        <div class="project-images" *ngIf="project.images.length">
           <div
             class="project-image-wrapper"
             *ngFor="let image of project.images"
@@ -34,14 +34,14 @@
           <p class="description">{{ project.longDescription }}</p>
 
           <!-- Tech Stack -->
-          <div class="tech-tags" *ngIf="project.tech?.length">
+          <div class="tech-tags" *ngIf="project.tech.length">
             <span *ngFor="let tech of project.tech">
               {{ tech }}
             </span>
           </div>
 
           <!-- Features -->
-          <div class="features" *ngIf="project.features?.length">
+          <div class="features" *ngIf="project.features.length">
             <h3>Key Features</h3>
             <ul>
               <li *ngFor="let feature of project.features">
