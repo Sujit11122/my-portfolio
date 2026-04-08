@@ -1,14 +1,32 @@
+
+:host {
+  --accent: #38bdf8;
+  --bg-footer: #1e293b;
+  --border: rgba(255, 255, 255, 0.07);
+  --text-primary: #f1f5f9;
+  --text-muted: #64748b;
+  --transition: 0.2s ease;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Footer ---------- */
 .footer {
-  background: #1f2937;
-  color: #e5e7eb;
-  padding: 1.75rem 0;
+  background: var(--bg-footer);
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 8%;
   margin-top: auto;
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,12 +34,24 @@
   flex-wrap: wrap;
 }
 
+/* ---------- Copyright ---------- */
 .footer p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-muted);
   margin: 0;
-  font-size: 0.95rem;
-  color: #d1d5db;
 }
 
+.footer p .heart {
+  color: #f87171;
+}
+
+.footer p .accent {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ---------- Social Links ---------- */
 .social-links {
   display: flex;
   gap: 1.5rem;
@@ -30,31 +60,46 @@
 .social-links a {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  color: #d1d5db;
+  gap: 0.4rem;
+  color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
   font-weight: 500;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color var(--transition), transform var(--transition);
 }
 
 .social-links a i {
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
 .social-links a:hover {
-  color: #93c5fd;
+  color: var(--accent);
   transform: translateY(-2px);
 }
 
+/* ================================================
+   RESPONSIVE — Mobile (max 768px)
+   ================================================ */
 @media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem;
+  }
+
   .footer-container {
     flex-direction: column;
     text-align: center;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .social-links {
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-links {
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 }

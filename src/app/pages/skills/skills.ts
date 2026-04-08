@@ -16,11 +16,11 @@ export class Skills {
     },
     {
       category: 'Frameworks & Libraries',
-      items: ['Angular', 'React', 'Node.js', 'Next.js', '.NET']
+      items: ['Angular', 'React', 'Node.js', 'Next.js', '.NET' ,'Flask']
     },
     {
       category: 'Databases',
-      items: ['MySQL', 'PostgreSQL', 'Microsoft Access']
+      items: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQLite']
     },
     {
       category: 'Developer Tools',

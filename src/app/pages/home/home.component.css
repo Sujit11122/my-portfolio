@@ -1,294 +1,199 @@
-/* ==============================
-   HERO SECTION
-============================== */
-.hero {
-  min-height: calc(100vh - 120px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #83c5be 0%, #764ba2 100%);
-  color: white;
-  padding: 2rem;
+
+:host {
+  --accent: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.15);
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 10px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --navbar-height: 70px; 
 }
 
+
+/* ─── Hero Section ──────────────────────────────── */
+.hero {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;       
+  justify-content: center;   
+  background-color: var(--bg);
+  padding: 2rem 8%;      
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow blob */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+
+/* ─── Hero Content Wrapper ──────────────────────── */
 .hero-content {
-  max-width: 1200px;
   display: flex;
   align-items: center;
   gap: 4rem;
-  animation: fadeInUp 1s ease-out;
+  max-width: 1100px;
+  width: 100%;
+  animation: fadeUp 0.8s ease both;
 }
 
+
+/* ─── Profile Image ─────────────────────────────── */
 .hero-image {
   flex-shrink: 0;
 }
 
 .hero-image img {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid white;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  border: 3px solid var(--accent);
+  box-shadow:
+    0 0 0 8px var(--accent-glow),
+    0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: block;
 }
 
 .hero-image img:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
+  box-shadow:
+    0 0 0 10px var(--accent-glow),
+    0 25px 70px rgba(0, 0, 0, 0.5);
 }
 
+
+/* ─── Hero Text ─────────────────────────────────── */
 .hero-text {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+.hero-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-.hero h2 {
-  font-size: 2rem;
+.hero-text h2 {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
   font-weight: 400;
-  margin-bottom: 1.5rem;
-  opacity: 0.95;
+  color: var(--accent);
+  letter-spacing: 0.04em;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2.5rem;
-  opacity: 0.9;
-  line-height: 1.6;
+.hero-text p {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 480px;
 }
 
-/* ==============================
-   CTA BUTTONS
-============================== */
+
+/* ─── CTA Buttons ───────────────────────────────── */
 .cta-buttons {
   display: flex;
-  gap: 1rem;
-  justify-content: flex-start;
   flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
-.cta-buttons button,
+.primary-btn,
+.secondary-btn,
 .resume-btn {
-  padding: 0.9rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: inherit;
-  text-decoration: none; /* for resume link */
-  display: inline-block;
-  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all var(--transition);
+  white-space: nowrap;
 }
 
+/* Primary — filled */
 .primary-btn {
-  background: white;
-  color: #667eea;
+  background: var(--accent);
+  color: #0f172a;
+  border: 2px solid var(--accent);
 }
 
 .primary-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: #7dd3fc;
+  border-color: #7dd3fc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-glow);
 }
 
+/* Secondary — outlined */
 .secondary-btn {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--accent);
+  border: 2px solid rgba(56, 189, 248, 0.4);
 }
 
 .secondary-btn:hover {
-  background: white;
-  color: #667eea;
-  transform: translateY(-3px);
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
-/* ==============================
-   RESUME BUTTON
-============================== */
+/* Resume — ghost */
 .resume-btn {
-  background: #667eea;
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 500;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.25);
+  background: transparent;
+  color: var(--text-secondary);
+  border: 2px solid var(--border);
 }
 
 .resume-btn:hover {
-  background: #5a67d8;
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.35);
 }
 
-/* ==============================
-   SECTIONS
-============================== */
-.about-preview {
-  padding: 5rem 2rem;
-  background: #f8f9fa;
-  text-align: center;
+
+/* ─── Other Sections ────────────────────────────── */
+section {
+  background-color: var(--bg);
 }
 
-.about-preview h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #333;
+section:nth-child(even) {
+  background-color: var(--surface);
 }
 
-.about-preview p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #555;
-}
 
-.skills {
-  padding: 5rem 2rem;
-  background: white;
-}
-
-.skills h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #333;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.skill-item {
-  text-align: center;
-  padding: 1.5rem;
-  border-radius: 10px;
-  background: #f8f9fa;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.skill-item h3 {
-  font-size: 1.2rem;
-  color: #667eea;
-  margin: 0;
-}
-
-.featured-projects {
-  padding: 5rem 2rem;
-  background: #f8f9fa;
-}
-
-.featured-projects h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #333;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.project-card {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-.project-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.project-card p {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.project-card .tech-stack {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.tech-stack span {
-  background: #667eea;
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-}
-
-.contact-cta {
-  padding: 5rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  text-align: center;
-  color: white;
-}
-
-.contact-cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.contact-cta p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-.contact-cta button {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  background: white;
-  color: #667eea;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.contact-cta button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* ==============================
-   ANIMATIONS & SCROLL
-============================== */
-@keyframes fadeInUp {
+/* ─── Fade-up Animation ─────────────────────────── */
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(28px);
   }
   to {
     opacity: 1;
@@ -296,86 +201,75 @@
   }
 }
 
-section[id] {
-  scroll-margin-top: 90px;
+
+/* ================================================
+   RESPONSIVE — Tablet (max 900px)
+   ================================================ */
+@media (max-width: 900px) {
+  .hero {
+    padding: 2rem 6%;
+  }
+
+  .hero-content {
+    gap: 2.5rem;
+  }
+
+  .hero-image img {
+    width: 160px;
+    height: 160px;
+  }
 }
 
-/* ==============================
-   RESPONSIVE
-============================== */
-@media (max-width: 968px) {
+
+/* ================================================
+   RESPONSIVE — Mobile 
+   ================================================ */
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100svh - var(--navbar-height));
+    padding: 2rem 1.5rem;
+  }
+
   .hero-content {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    gap: 2rem;
+    gap: 1.8rem;
   }
 
-  .hero-text {
-    text-align: center;
+  .hero-image img {
+    width: 140px;
+    height: 140px;
   }
 
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
+  .hero-text p {
+    max-width: 100%;
   }
 
   .cta-buttons {
     justify-content: center;
-  }
-
-  .hero-image img {
-    width: 250px;
-    height: 250px;
-  }
-}
-
-@media (max-width: 768px) {
-  .cta-buttons {
     flex-direction: column;
   }
 
-  .cta-buttons button,
+  .primary-btn,
+  .secondary-btn,
   .resume-btn {
     width: 100%;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-image img {
-    width: 200px;
-    height: 200px;
+    justify-content: center;
   }
 }
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
 
-  .skills-grid {
-    grid-template-columns: 1fr;
+/* ================================================
+   RESPONSIVE — Small Mobile 
+   ================================================ */
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 1rem;
   }
 
   .hero-image img {
-    width: 180px;
-    height: 180px;
-  }
-
-  .resume-btn {
-    font-size: 0.9rem;
-    padding: 0.65rem 1.4rem;
+    width: 120px;
+    height: 120px;
   }
 }

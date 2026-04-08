@@ -14,7 +14,7 @@ export class Aboutcomponent {
 
   about = {
     intro:
-      'I am a Computer Science student at Southeastern Louisiana University with a strong interest in full-stack software development and problem-solving.',
+      'I am Sujit Gautam, a Computer Science student at Southeastern Louisiana University with a strong interest in full-stack software development and problem-solving.',
     description:
       'I enjoy building scalable, user-focused applications using modern frontend and backend technologies. My academic background in data structures, algorithms, and software engineering helps me write clean, efficient, and maintainable code.',
     passion:
@@ -25,9 +25,9 @@ export class Aboutcomponent {
     {
       degree: 'Bachelor of Science in Computer Science',
       school: 'Southeastern Louisiana University',
-      year: 'Jan 2024 – Dec 2027',
+      year: 'Jan 2024 – May 2027',
       description:
-        'GPA: 3.87/4.00. Relevant coursework includes Data Structures and Algorithms, Software Engineering Principles, and Object-Oriented Programming (Java, C++).'
+        'GPA: 3.87/4.00 .  Relevant coursework includes Data Structures and Algorithms, Software Engineering Principles, and Object-Oriented Programming (Java, C++).'
     }
   ];
 

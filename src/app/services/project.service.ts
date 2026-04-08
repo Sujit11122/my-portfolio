@@ -27,7 +27,7 @@ export class ProjectService {
         'Developed an Android application that allows users to browse, customize, and order coffee through an intuitive interface.',
       longDescription:
         'PaoBucks is a feature-rich Android coffee ordering application built using Kotlin and Firebase. The app enables users to browse coffee items, customize orders, and place orders seamlessly. Material Design principles were applied to create a responsive and engaging user interface. Agile development practices and GitHub version control were used to collaborate effectively and deliver incremental updates.',
-      tech: ['Kotlin', 'Firebase', 'Android Studio', 'XML', 'Git', 'GitHub'],
+      tech: ['Kotlin', 'Firebase', 'Android Studio', 'XML', 'Git','RecyclerView', 'GitHub'],
       images: [
         'assets/projects/paobucks-1.png',
         'assets/projects/paobucks-2.png'
@@ -52,7 +52,7 @@ export class ProjectService {
         'Built a task and time management system as part of a software engineering team project.',
       longDescription:
         'TaskFlow is a task and time management system developed using C#, .NET, React, and TypeScript. The application focuses on improving productivity by enabling task tracking, prioritization, and workflow organization. The project emphasized teamwork, planning, and efficient resource management following software engineering principles.',
-      tech: ['C#', '.NET', 'React', 'TypeScript', 'Git', 'GitHub' , 'Agile Methodology'],
+      tech: ['C#', '.NET', 'React', 'TypeScript', 'Git', 'GitHub' , 'Agile Methodology','Restful APIs'],
       images: [
         'assets/projects/taskflow-1.png',
         'assets/projects/taskflow-2.png'
